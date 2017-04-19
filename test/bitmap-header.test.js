@@ -7,9 +7,10 @@ describe('bitmap header', () => {
 
     let buffer = null;
     before(() => {
-        // const buffer = fsp.read('./test/test-bitmap.bmp', (err, bitData) => {
-
-        // }).then();
+        return fsp.readFile('./test/test-bitmap.bmp')
+        .then(data => {
+            buffer = data;
+        });
         // // HINT: return a promise, this is async!
     });
 
