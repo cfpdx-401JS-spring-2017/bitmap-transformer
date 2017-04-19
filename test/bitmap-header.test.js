@@ -6,15 +6,15 @@ describe('bitmap header', () => {
 
     let buffer = null;
     before(() => {
-        // TODO: read './test/test-bitmap.bmp' into buffer variable
+        // : read './test/test-bitmap.bmp' into buffer variable
 
         // HINT: return a promise, this is async!
     });
 
     it('has correct specs', () => {
-        // TODO: read the docs to figure out what these values should be
-        assert.ok(constants.PIXEL_OFFSET);
-        assert.ok(constants.BITS_PER_PIXEL_OFFSET);
+        // : read the docs to figure out what these values should be
+        assert.ok(constants.PIXEL_OFFSET);//10
+        assert.ok(constants.BITS_PER_PIXEL_OFFSET);//
         assert.ok(constants.FILE_SIZE_OFFSET);
     });
 
