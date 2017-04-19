@@ -21,14 +21,14 @@ describe('bitmap header', () => {
     });
 
     it('has correct specs', () => {
-        // TODO: read the docs to figure out what these values should be
+        // done?TODO: read the docs to figure out what these values should be
         assert.ok(constants.PIXEL_OFFSET);
         assert.ok(constants.BITS_PER_PIXEL_OFFSET);
         assert.ok(constants.FILE_SIZE_OFFSET);
     });
 
     it('parses header data', () => {
-        // TODO: use the constants to populate the following properties
+        // done?TODO: use the constants to populate the following properties
         // on the BitmapHeader in its constructor
         const header = new BitmapHeader(buffer);
         assert.equal(header.pixelOffset, 54);
