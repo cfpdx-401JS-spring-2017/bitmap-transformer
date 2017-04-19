@@ -1,13 +1,17 @@
 const assert = require('assert');
 const constants = require('../lib/bitmap-constants');
 const BitmapHeader = require('../lib/bitmap-header');
+const fsp = require('fs-promise');
 
 describe('bitmap header', () => {
 
     let buffer = null;
     before(() => {
         // TODO: read './test/test-bitmap.bmp' into buffer variable
-
+        return fsp.readFile('./test/test-bitmap.bmp')
+        .then(data => {
+            buffer = data;
+        });
         // HINT: return a promise, this is async!
     });
 
