@@ -1,12 +1,18 @@
 const assert = require('assert');
 const constants = require('../lib/bitmap-constants');
 const BitmapHeader = require('../lib/bitmap-header');
+const fsp = require('fs-promise');
 
 describe('bitmap header', () => {
 
     let buffer = null;
     before(() => {
-        // : read './test/test-bitmap.bmp' into buffer variable
+        return fsp.readFile('./test/test-bitmap.bmp')
+            .then(data => {
+                buffer = data;
+            });
+
+        // DONE : read './test/test-bitmap.bmp' into buffer variable
 
         // HINT: return a promise, this is async!
     });
@@ -18,7 +24,7 @@ describe('bitmap header', () => {
         assert.ok(constants.FILE_SIZE_OFFSET);
     });
 
-    it('parses header data', () => {
+    it.only('parses header data', () => {
         // TODO: use the constants to populate the following properties
         // on the BitmapHeader in its constructor
         const header = new BitmapHeader(buffer);
