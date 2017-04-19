@@ -11,7 +11,7 @@ describe('bitmap header', () => {
         // HINT: return a promise, this is async!
     });
 
-    it('has correct specs', () => {
+    it.only('has correct specs', () => {
         // : read the docs to figure out what these values should be
         assert.ok(constants.PIXEL_OFFSET);//
         assert.ok(constants.BITS_PER_PIXEL_OFFSET);//
