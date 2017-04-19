@@ -9,7 +9,6 @@ describe('bitmap header', () => {
   before(() => {
     return fsp.readFile('./test/test-bitmap.bmp')
             .then(data => {
-                console.log('data', data);
               buffer = data;
             });
         // TODO: read './test/test-bitmap.bmp' into buffer variable
