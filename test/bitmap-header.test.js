@@ -8,11 +8,11 @@ describe('bitmap header', () => {
     let buffer = null;
     before(() => {
         return fsp.readFile('./test/test-bitmap.bmp')
-        .then(data => {
-            buffer = data;
-        });
-        // // HINT: return a promise, this is async!
+            .then(data => {
+                buffer = data;
+            });
     });
+    // HINT: return a promise, this is async!
 
     it('has correct specs', () => {
         // TODO: read the docs to figure out what these values should be
