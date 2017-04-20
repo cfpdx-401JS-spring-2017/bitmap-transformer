@@ -1,7 +1,8 @@
 const assert = require('assert');
 const fs = require('fs');
+const fsp = require('fs-promise');
 const BitmapTransformer = require('../lib/bitmap-transformer');
-const invert = require('../lib/invert-transform');
+const invert = require('../lib/invert-transformer');
 
 describe('bitmap file transformer', () => {
     
@@ -10,12 +11,17 @@ describe('bitmap file transformer', () => {
         // TODO: read './test/test-bitmap.bmp' into buffer variable
         // HINT: return a promise, this is async!
 
+        return fsp.readFile('./test/test-bitmap.bmp')
+            .then(data => {
+            buffer = data;
+        });
+        
         // TODO: the functionality in this before is same as 
         // other test, can you remove (extract) the duplication?
     });
 
     // "pinning" test, or "snapshot" test
-    it('test whole transform', () => {
+    it.only('test whole transform', () => {
         // use the BitmapTransformer class, 
         // passing in the buffer from the file read
         const bitmap = new BitmapTransformer(buffer);
@@ -29,7 +35,7 @@ describe('bitmap file transformer', () => {
 
         // read the output file we saved earlier as
         // the "standard" expected output file
-        const buffer = fs.readFileSync('./test/inverted-expected.bmp');
+        const expectedBuffer = fs.readFileSync('./test/inverted-expected.bmp');
         assert.deepEqual(bitmap.buffer, buffer);
 
         // if you don't have a standard file yet, you could write it 
