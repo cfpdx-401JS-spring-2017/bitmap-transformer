@@ -37,4 +37,3 @@ using a `BitmapHeader` class. The test is a pinning, or snapshot test, and a pre
 Interested in more transforms?
 
 * https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/
-
