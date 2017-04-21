@@ -1,5 +1,5 @@
 const assert = require('assert');
-const fs = require('fs');
+const fsp = require('fs-promise');
 const BitmapTransformer = require('../lib/bitmap-transformer');
 const invert = require('../lib/invert-transform');
 
@@ -7,6 +7,10 @@ describe('bitmap file transformer', () => {
     
     let buffer = null;
     before(() => {
+        return fsp.readFile('./test/test-bitmap.bmp')
+        .then(data => {
+            buffer = data;
+        });
         // TODO: read './test/test-bitmap.bmp' into buffer variable
         // HINT: return a promise, this is async!
 
